@@ -1,0 +1,79 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card  title="Look for Active/Inactive Accounts"  
+                     style="color:#000000;" 
+                     icon-name="action:freeze_user"> 
+     <div class="slds-var-m-top_small slds-var-m-bottom_medium">
+        <!-- Brand Button -->
+        <div class="space"></div>
+        
+        <lightning-button  variant="success"
+                           label={clickedActiveButton} 
+                           title="Show Active Accounts" 
+                           onclick={handleActiveClick} 
+                           class="slds-var-m-left_x-small">
+        </lightning-button>
+
+        <div class="space"></div>
+
+        <lightning-button  variant="destructive"
+                           label={clickedInactiveButton} 
+                           title="Show Inactive Accounts" 
+                           onclick={handleInactiveClick} 
+                           class="slds-var-m-left_x-small">
+        </lightning-button>
+      </div>
+    </lightning-card> 
+    
+    <div class="space"></div>
+
+       <template if:true={boolActive}>    
+         <c-child-l-w-c onviewcaseclicked = {handleCaseView}
+                        active-data={activeRec}           
+         ></c-child-l-w-c>
+        </template>
+
+    <div class="space"></div>    
+
+        <template if:true={boolInactive}> 
+          <c-child-l-w-c onviewcaseclicked = {handleCaseView}
+                         inactive-data={inactiveRec}
+          ></c-child-l-w-c>
+        </template>
+
+    <div class="space"></div>
+
+         <template if:true={activeCaseRec}>
+          
+          <lightning-card title={activeAcctName} icon-name="custom:custom15" variant="narrow"> 
+                     
+                   <lightning-datatable
+                           key-field="id"
+                           data={activeCaseRec}
+                           columns={case_column} 
+                           hide-checkbox-column="true" 
+                           show-row-number-column="true">
+                   </lightning-datatable>
+                   
+          </lightning-card>
+          
+         </template>  
+
+      <div class="space"></div>    
+         
+          
+          <template if:true={inactiveCaseRec}>
+           
+            <lightning-card title={inactiveAcctName} icon-name="custom:custom16" variant="narrow">                         
+                     <lightning-datatable
+                             key-field="id"
+                             data={inactiveCaseRec}
+                             columns={case_column} 
+                             hide-checkbox-column="true" 
+                             show-row-number-column="true">
+                     </lightning-datatable>                    
+            </lightning-card>
+     
+          </template> 
+          
+</template>

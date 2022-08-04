@@ -1,0 +1,87 @@
+<template>
+    <lightning-card  title="Random Recipe"  
+                     style="color:#000000;" 
+                     icon-name="action:freeze_user"> 
+
+     <div class="slds-var-m-top_small slds-var-m-bottom_medium">    
+        
+        
+        <lightning-button  variant="success"
+                           label='Get Recipe' 
+                           title="Show Random Recipes" 
+                           onclick={handleRandomClick}                         
+                           class="slds-var-m-left_x-small">
+        </lightning-button>
+
+        <div class="slds-var-m-top_small slds-var-m-bottom_medium">
+
+            <lightning-layout-item>
+                <span class="slds-var-p-right_medium" 
+                 style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-weight: Bold; color:#5c0526">
+                 <i>&nbsp;&nbsp;&nbsp;{title}</i> 
+                </span>
+    
+              </lightning-layout-item>  
+
+        </div>
+
+        
+
+        <div
+        style="
+          margin-top: 2rem;
+          border: 1px solid rgb(255, 255, 255);
+          border-radius: 4px;
+          padding: 1rem;
+        "
+      >
+        <lightning-layout>   
+            
+          
+
+          <lightning-layout-item size="4">
+            <img
+              src={image}
+              style="
+                width: 100%;
+                height: auto;
+                border-radius: 4px;
+                overflow: hidden;
+              "
+            />
+          </lightning-layout-item>
+          <lightning-layout-item size="8" padding="horizontal-medium">
+            <lightning-layout multiple-rows vertical-align="center">              
+              
+                <lightning-layout-item size="12" class="slds-var-m-top_medium">                    
+                  <lightning-formatted-rich-text
+                    value={summary}
+                  ></lightning-formatted-rich-text>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" class="slds-var-m-top_medium">
+                  <span class="slds-var-p-right_medium" style="font-weight: bold"
+                    >Price Per Serving: </span
+                  ><lightning-formatted-number
+                    format-style="currency"
+                    currency-code="USD"
+                    value={price}
+                  ></lightning-formatted-number>
+                </lightning-layout-item>
+                <lightning-layout-item size="12">
+                  <span class="slds-var-p-right_medium" style="font-weight: bold"
+                    >Ready In: </span
+                  ><lightning-formatted-number
+                    value={time}
+                  ></lightning-formatted-number>
+                  &nbsp;Minutes
+                </lightning-layout-item>
+            </lightning-layout>
+          </lightning-layout-item>
+        </lightning-layout>
+      </div>
+
+        
+      </div>
+    </lightning-card> 
+    
+</template>

@@ -1,0 +1,12 @@
+.space {
+    width: 10px;
+    margin-right:20px;
+    height: auto;
+    display: inline-block;
+  }
+
+  :host{
+    --slds-c-card-color-background:rgba(255, 255, 255, 0.678);    
+    --slds-c-card-color-border:#050505; 
+    
+  }

@@ -1,0 +1,26 @@
+<template>    
+    
+    <lightning-card  title={messageWish}   style="color:rgb(3, 3, 3);" icon-name="action:user">
+        <div class="slds-var-p-around_medium"> 
+
+            <lightning-input type="text"  label="Enter some text" placeholder="Type here..." 
+            onchange={capitalizeWord}></lightning-input> 
+            <br>
+            <h4>Capitalized Value </h4>
+            <br>
+            <b>&nbsp;&nbsp;&nbsp;&nbsp;{capitalizedValue}</b>  
+
+            <!--<lightning-input type="text" label="Capitalized Value" value={capitalizedValue} readonly>
+               
+
+            </lightning-input>  -->         
+
+            <!--<lightning-output-field title={capitalizedValue} style="color:rgb(255, 188, 4);">           
+            
+            </lightning-output-field> -->         
+
+           
+        </div>
+    </lightning-card>
+    
+</template>

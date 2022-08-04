@@ -1,0 +1,10 @@
+:host{
+     
+    --slds-c-input-color-background: #b0b7b907;
+    --slds-c-input-color-border: rgb(105, 94, 143);
+    --slds-c-card-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1);
+    --slds-c-card-color-border:#000000;
+    --slds-c-card-color-background:rgba(197, 197, 211, 0.671); 
+ 
+}
+

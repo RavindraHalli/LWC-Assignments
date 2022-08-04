@@ -1,0 +1,34 @@
+<!-- sldsValidatorIgnore -->
+<template>
+  <template if:true={activeData}>     
+  <lightning-card title="Active Accounts" icon-name="custom:custom14" variant="narrow"> 
+    <div style="height: 250px;" class="slds-var-m-around_medium">            
+            <lightning-datatable
+                    key-field="id"
+                    data={activeData}
+                    columns={data_columns}                                   
+                    onrowaction={navigateToAccount}
+                    hide-checkbox-column="true" 
+                    show-row-number-column="true">
+            </lightning-datatable>
+    </div>        
+   </lightning-card>
+   </template> 
+
+
+   <template if:true={inactiveData}>
+    <lightning-card title="Inactive Accounts" icon-name="custom:custom14" variant="narrow"> 
+      <div style="height: 250px;" class="slds-var-m-around_medium">    
+          <lightning-datatable
+                  key-field="id"
+                  data={inactiveData}
+                  columns={data_columns}
+                  onrowaction={navigateToAccount}                  
+                  hide-checkbox-column="true" 
+                  show-row-number-column="true">
+          </lightning-datatable>
+     </div>        
+   </lightning-card>
+   </template>
+</template>
+  
